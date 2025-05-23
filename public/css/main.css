@@ -1,0 +1,59 @@
+/* Reset and base styles */
+html, body {
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', 'Arial', sans-serif;
+    overflow: hidden;
+}
+
+/* Desktop styles */
+#desktop {
+    width: 100%;
+    height: 100vh; /* Full height since taskbar is floating */
+    background-color: #2b5797; /* Windows 10-like blue */
+    position: relative;
+    overflow: hidden;
+}
+
+/* Optional: Add a subtle gradient to the desktop */
+#desktop::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, transparent 100%);
+    pointer-events: none;
+}
+
+/* Taskbar styles */
+#taskbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background-color: #1f1f1f;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    box-sizing: border-box;
+    z-index: 1000;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+}
+
+/* Optional: Add a subtle glass effect to taskbar */
+#taskbar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, 
+        rgba(255,255,255,0.1) 0%,
+        rgba(255,255,255,0.05) 100%);
+    pointer-events: none;
+}
